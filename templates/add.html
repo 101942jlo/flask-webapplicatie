@@ -1,0 +1,36 @@
+{% extends 'default.html' %}
+
+{% block content %}
+<h1>Toevoegen</h1>
+<div class="row">
+    <div class="col-8">
+        <form action="{{ url_for('add_user') }}" method="post" enctype="multipart/form-data">
+            <!--            Naam -->
+            <div class="mb-3">
+                <label for="InputName" class="form-label">Naam</label>
+                <input type="text" class="form-control" name="name" id="InputName">
+            </div>
+            <!--            Leeftijd-->
+            <div class="mb-3">
+                <label for="InputAge" class="form-label">Leeftijd</label>
+                <input type="text" class="form-control" name="age" id="InputAge">
+            </div>
+            <!--            Man / Vrouw-->
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" value="men" id="radioMale">
+                <label class="form-check-label" for="radioMale">
+                    Man
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" value="women" id="radioFemale" checked>
+                <label class="form-check-label" for="radioFemale">
+                    Vrouw
+                </label>
+            </div>
+            <a href="{{ url_for('index')}} " class="btn btn-outline-info">Annuleren</a>
+            <button type="submit" class="btn btn-primary">Toevoegen</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

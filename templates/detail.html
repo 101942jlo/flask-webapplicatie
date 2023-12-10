@@ -1,0 +1,17 @@
+{% extends 'default.html' %}
+
+{% block content %}
+<h1>Details</h1>
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <img src="{{ user['foto'] }}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{ user['naam'] }}</h5>
+                <p class="card-text">id: {{ user['id'] }}</p>
+                <p class="card-text">leeftijd: {{ user['leeftijd'] }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
